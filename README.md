@@ -1,6 +1,5 @@
 # Design and simulation of 1k 32-bit 6T-SRAM using NGSpice
 ##  Contents
-- Parameter Extraction
 - SRAM Desgin
 - Block Diagram
 - Pre-Layout
@@ -12,21 +11,21 @@
 - Future work  
   
   ## SRAM Design
-    The project is generally focused on the design of 1k 32-bit 6T SRAM memory using [OpenRAM](https://www.openidentityplatform.org/openam) compiler.For the design of the custom memory array, OpenRAM memory compiler takes in Spice nelist file and Layout file to generate a SRAM memory cell.
+    The project is generally focused on the design of 1k 32-bit 6T SRAM memory using [OpenRAM] (https://www.openidentityplatform.org/openam) compiler. For the design of the custom memory array, OpenRAM memory compiler takes in Spice netlist file and Layout file to generate a SRAM memory cell.
    - SRAM Specification - Memory Size of 1k 32-bit, Operating voltage - 5V, Technology PDK file - 0.5um SCMOS Technology from MOSIS, Access time less than 30ns 
      - For more information on OpenRAM compiler please [click here](https://github.com/mguthaus/OpenRAM/blob/master/OpenRAM_ICCAD_2016_paper.pdf "OpenRAM")
    ## Block Diagram
 ![block dia](https://user-images.githubusercontent.com/71965706/94511998-881da380-0238-11eb-91c3-ffe9e7b702da.png)
 
   The SRAM block consists of 8 major blocks:
--->  The bit-cell array
+-->  Bit-cell array
 -->  Address Decoder
 -->  Sense Amplifier
 -->  Word-line driver 
--->  Precharge circuit
--->  Writ Driver
+-->  Bit-line Precharge 
+-->  Write Driver
 -->  Control logic 
--->  Column MUX. 
+-->  Column Multiplexer 
 
 In this project i have designed and characterised the Bit-cell array that all the devices of SRAM-6T cell using NGSpice tool with 0.5um SCMOS technology from MOSIS.
   ## Pre-Layout

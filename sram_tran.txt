@@ -1,0 +1,23 @@
+**********Testbench For transiiant Analysis********
+
+.temp 105
+.NODESET v(xi0.Q)=5
+.tran 5p 300n
+
+.include '/home/vlsi/Desktop/my_lab/sram_parasitics.sp'
+.include '/home/vlsi/Desktop/my_lab/sense_amp.sp'
+.include '/home/vlsi/Desktop/my_lab/write_driver.sp'
+.lib '/home/vlsi/my_project/project2020/eda/ngspice-32/scn4m_subm.lib'ff
+
+******Voltage Sources******
+vsup vdd 0 dc 5
+v_clk clk 0 PULSE(0 5 0n 1n 1n 13n 30n)
+v_wl W 0 PULSE(0 5 23n  1n 1n 5n 30n)
+v_en sense_en  0 PULSE(5 0 26n 1n 1n 2n 60n)
+v_din din 0 PULSE(5 0 45n 1n 1n 6n 120n)
+v_w_en write_en 0 PULSE(0 5 45n 1n 1n 6n 60n)
+.control
+run
+plot v(clk)+42 v(pc)+36 v(W)+24 v(B)+18 v(BB)+18 v(xi0.Q)+12 v(xi0.Qbar)+12 v(dout)+6 v(sense_en) v(write_en)+30
+.endc
+.end

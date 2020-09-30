@@ -1,0 +1,19 @@
+*************6T Cell**************
+
+.SUBCKT 6Tcell bl br wl vdd gnd
+
+*spice file created from cell_6t
+
+*inverter1
+M1 Q Qbar vdd vdd p w=0.6u l=0.8u
+M2 Q Qbar gnd gnd n w=1.6u l=0.4u
+
+*inverter2
+M3 vdd Q Qbar vdd p w=0.6u l=0.8u
+M4 gnd Q Qbar gnd n w=1.6u l-0.4u
+
+*access_Transistor
+M5 Q wl bl gnd n w=0.8u l=0.4u
+M6 Qbar wl br gnd n w=0.8u l=0.4u
+
+.ENDS
