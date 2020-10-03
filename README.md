@@ -78,6 +78,7 @@ The precharge circuit is placed on top of every column in the memory array and e
 - A differential sense amplifier is used to sense the voltage difference between the bit-lines of a memory cell while a read operation is performed. The sense amplifier uses a bit-line isolation technique to increase per-
               formance. 
 - The sense amplifier circuitry is placed below thecolumn multiplexer or the memory array if no      column mul- tiplexer is used. There is one sense amplifier for each output bit.
+
 - 
 Sense Amplifier generally used to detect the node voltage stored in the memory. It will be on at the time of Read operation. I have used a latch based Sense amplifier in my design.
 
