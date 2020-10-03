@@ -32,30 +32,32 @@ This project is focused on  6T SRAM memory design.
 - The 6T cell is the default memory cell because it is the most commonly used cell in SRAM devices. 6T cells are tiled together with abutting word- and bit-lines to make up the memory array. The bit-cell array’s aspect ratio is made as square as possible using multiple columns of data words. The memory cell is a custom designed library cell for each technology. Other types of memory cells, such as 7T, 8T, and 10T cells, can be used as alternatives to the 6T cell.   
 
 ### 6T-SRAM Memory cell
-  **Circuit Diagram**
+ 
 ![SRAM_6t](https://github.com/sprusty23/SRAM/blob/master/schematics/6t.png)
 
 - In this project I have designed and characterised the Bit-cell array of SRAM-6T cell using NGSpice tool with 0.5um SCMOS technology from MOSIS.
   
 - In this section I have represented the DC analysis and Transient Analysis of the 6T-SRAM cell which I have simulated using NGSpice
 
--  **DC Analysis**
+**DC Analysis**
   
   ![Dc sim](https://user-images.githubusercontent.com/71965706/94514148-1cd6d000-023e-11eb-8fc0-00866ce9f399.png)
+- From the Dc Analysis we get the operating point of the CMOS Inverters at the intersection of input and output voltage.
+ - we also get the Design Margin for the pull-up and pull-down device by performing write operatrion.
 
+#DC corner simulation data:
  ![DC sim](https://github.com/sprusty23/SRAM/blob/master/schematics/dc_table.png )
 
- - From the Dc Analysis we get the operating point of the CMOS Inverters at the intersection of input and output voltage.
- - we also get the Design Margin for the pull-up and pull-down device by performing write operatrion.
+- I have simulate the cicuit at different corner (Slow slow, fast fast, Nominal) at 3 different temperature and found that at slow slow 120°C temperature it shows worst result.
+
 ![DC analysis](https://github.com/sprusty23/SRAM/blob/master/schematics/dc_plot.png)
+- This is the plot of word line, the stored data Q and Qbar. 
 
   **Transient Analysis**
+  ![SRAM_sim](https://github.com/sprusty23/SRAM/blob/master/schematics/transi_table.png)
   
-  ![SRAM_sim](https://user-images.githubusercontent.com/71965706/94520666-472e8a80-024a-11eb-9492-f35dc69cfd40.png)
-  
-In the above simulation i have done a Write-Read-write operation. Red one is my input signal to Pre-charge circuit. Blue colur represents the word line signal , next 2 signals represents the bit and complemet bit signal and last two signals represents the internal node volatages which stored in the cell.
-    I have calculated the maximum volatages variation at internal node for the [PVT](https://github.com/sprusty23/SRAM/blob/master/schematics/transi_table.png) corners and for the temperature -40C,25C and 105C.
-    
+In the above simulation i have done a Write-Read-write operation. I have calculated the maximum volatages variation at internal node for the
+ 
   **Simulation Result**
   
   ![SRAM](https://github.com/sprusty23/SRAM/blob/master/schematics/transient.png)
@@ -63,15 +65,15 @@ In the above simulation i have done a Write-Read-write operation. Red one is my 
 
  
   
- # Circuit Daigram of SRAM cell with all Parasitcs**
+ ## Circuit Daigram of SRAM cell with all Parasitcs**
  
  ![sram_parasitics](https://github.com/sprusty23/SRAM/blob/0ba994ce0b57662f6ac72ef77f38e4181ec6abfb/schematics/parasitics.png)
 
-#Precharge Circuit
+##Precharge Circuit
 - This circuitry pre-charges the bit- lines during the first phase of the clock for read operations.
 The precharge circuit is placed on top of every column in the memory array and equalizes the bit-line voltages so that the sense amplifier can sense the voltage difference between the two bit-lines.
 
-- In the above circuit diagram the M1, M2 mosfets are used for pre-charging the Bit and Bit bar line.	While M3 mosfet is used for  M4 and M5 mosfets are used at the time of write operation. As 1k 32-bit SRAM consists of 32k of bit cells, so it can taken as 128*256(i.e. 128 number of rows and 256 number of columns). For Simulation we are taking one 6T SRAM cell with the parasitic capacitor of all the cells. cw1 ,cw2 ,cw3 are the wire load capacitors(10fF/cell) which are connected to bit, complementary bit and word line. Simillarly M6, M7, M8, M9 are the parasitic mosfets whose total capacitance is equal to the 1k 32-bit cell array.
+- In the above circuit diagram the M5, M6, M7 mosfets are used for pre-charging the Bit and Bit bar line. M8 and M9 mosfets are used at the time of write operation. As 1k 32-bit SRAM consists of 32k of bit cells, so it can taken as 128*256(i.e. 128 number of rows and 256 number of columns). For Simulation we are taking one 6T SRAM cell with the parasitic capacitor of all the cells. cw1 ,cw2 ,cw3 are the wire load capacitors(10fF/cell) which are connected to bit, complementary bit and word line. Simillarly M1, M2, M3, M4 are the parasitic mosfets whose total capacitance is equal to the 1k 32-bit cell array.
 ### Sense Amlifier
 - A differential sense amplifier is used to sense the voltage difference between the bit-lines of a memory cell while a read operation is performed. The sense amplifier uses a bit-line isolation technique to increase per-
               formance. The sense amplifier circuitry is placed below thecolumn multiplexer or the memory array if no              column mul- tiplexer is used. There is one sense amplifier for each output bit.
