@@ -5,12 +5,12 @@
 We can design SRAM in many ways based on number of transistor used in its core cell. For example : 6T SRAM, 8T SRAM, 9T SRAM etc..
 This project is focused on  6T SRAM memory design.
 
-#SRAM specification   
--->Memory Size -  1k * 32-bit. 
---> Operating voltage - 5V
--->Technology  PDK file - 0.5µm CMOS Technology
--->Tool Used – Sue2, NGspice,  Magic
--->Compiler – Open source memory compiler OpenRAM. (https://github.com/mguthaus/OpenRAM/blob/master/OpenRAM_ICCAD_2016_paper.pdf "OpenRAM")
+##SRAM specification   
+- Memory Size -  1k * 32-bit. 
+- Operating voltage - 5V
+- Technology  PDK file - 0.5µm CMOS Technology
+- Tool Used – Sue2, NGspice,  Magic
+- Compiler – Open source memory compiler OpenRAM. (https://github.com/mguthaus/OpenRAM/blob/master/OpenRAM_ICCAD_2016_paper.pdf "OpenRAM")
  
 ## SRAM Design 
  The SRAM block consists of 8 major blocks:
