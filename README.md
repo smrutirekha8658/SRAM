@@ -24,7 +24,7 @@ This project is focused on  6T SRAM memory design.
    -  Address Decoder
 
     
- ## Block Diagram
+## Block Diagram
 ![block dia](https://github.com/sprusty23/SRAM/blob/master/schematics/SRAM.png)
 
 
@@ -38,8 +38,7 @@ This project is focused on  6T SRAM memory design.
 - In this project I have designed and characterised the Bit-cell array of SRAM-6T cell using NGSpice tool with 0.5um SCMOS technology from MOSIS.
   
 - In this section I have represented the DC analysis and Transient Analysis of the 6T-SRAM cell which I have simulated using NGSpice
-
-**DC Analysis**
+##DC Analysis
   
   ![Dc sim](https://user-images.githubusercontent.com/71965706/94514148-1cd6d000-023e-11eb-8fc0-00866ce9f399.png)
 - From the Dc Analysis we get the operating point of the CMOS Inverters at the intersection of input and output voltage.
@@ -48,12 +47,13 @@ This project is focused on  6T SRAM memory design.
 #DC corner simulation data:
  ![DC sim](https://github.com/sprusty23/SRAM/blob/master/schematics/dc_table.png )
 
-- I have simulate the cicuit at different corner (Slow slow, fast fast, Nominal) at 3 different temperature and found that at slow slow 120°C temperature it shows worst result.
+- I have simulate the circuit at different corner (Slow slow, fast fast, Nominal) at 3 different temperature.
+- found that slow slow 105°C temperature is the worst case scenario.As at this case the Vq value is minimum and Vqbar value is maximum. 
 
 ![DC analysis](https://github.com/sprusty23/SRAM/blob/master/schematics/dc_plot.png)
 - This is the plot of word line, the stored data Q and Qbar. 
 
-  **Transient Analysis**
+##Transient Analysis
   ![SRAM_sim](https://github.com/sprusty23/SRAM/blob/master/schematics/transi_table.png)
   
 In the above simulation i have done a Write-Read-write operation. I have calculated the maximum volatages variation at internal node for the
@@ -65,27 +65,28 @@ In the above simulation i have done a Write-Read-write operation. I have calcula
 
  
   
- ## Circuit Daigram of SRAM cell with all Parasitcs**
+## Circuit Daigram of SRAM cell with all Parasitcs**
  
  ![sram_parasitics](https://github.com/sprusty23/SRAM/blob/0ba994ce0b57662f6ac72ef77f38e4181ec6abfb/schematics/parasitics.png)
 
-##Precharge Circuit
+### Precharge Circuit
 - This circuitry pre-charges the bit- lines during the first phase of the clock for read operations.
 The precharge circuit is placed on top of every column in the memory array and equalizes the bit-line voltages so that the sense amplifier can sense the voltage difference between the two bit-lines.
 
 - In the above circuit diagram the M5, M6, M7 mosfets are used for pre-charging the Bit and Bit bar line. M8 and M9 mosfets are used at the time of write operation. As 1k 32-bit SRAM consists of 32k of bit cells, so it can taken as 128*256(i.e. 128 number of rows and 256 number of columns). For Simulation we are taking one 6T SRAM cell with the parasitic capacitor of all the cells. cw1 ,cw2 ,cw3 are the wire load capacitors(10fF/cell) which are connected to bit, complementary bit and word line. Simillarly M1, M2, M3, M4 are the parasitic mosfets whose total capacitance is equal to the 1k 32-bit cell array.
 ### Sense Amlifier
 - A differential sense amplifier is used to sense the voltage difference between the bit-lines of a memory cell while a read operation is performed. The sense amplifier uses a bit-line isolation technique to increase per-
-              formance. The sense amplifier circuitry is placed below thecolumn multiplexer or the memory array if no              column mul- tiplexer is used. There is one sense amplifier for each output bit.
+              formance. 
+- The sense amplifier circuitry is placed below thecolumn multiplexer or the memory array if no      column mul- tiplexer is used. There is one sense amplifier for each output bit.
 - 
 Sense Amplifier generally used to detect the node voltage stored in the memory. It will be on at the time of Read operation. I have used a latch based Sense amplifier in my design.
-  
-  **Circuit Diagram**
-![Sense_amp](https://github.com/sprusty23/SRAM/blob/master/schematics/sense_amp.png) 
+
+
+  ![Sense_amp](https://github.com/sprusty23/SRAM/blob/master/schematics/sense_amp.png) 
   
 ### Write Driver 
 - The write drivers send the input data signals onto the bit-lines for a write operation. The write
-drivers are tri-stated so that they can be placed between the column multiplexer/memory array and the sense amplifiers.
+              drivers are tri-stated so that they can be placed between the column multiplexer/memory array and the     sense amplifiers.
 - There is one write driver for each input data bit.
 
 - The write drivers send the input data signals onto the bit-lines for a write operation. The write drivers are tri-stated so that they can be placed between the column multiplexer/memory array and the sense amplifiers. There is one write driver for each input data bit.
@@ -103,11 +104,5 @@ To Download NGSpice on your System
 **Clone the Repo**
 'git clone https://www.github.com/silicon-vlsi/project2020'
 
-
-## Future work
-- To create the layout using Magic.
-- And to compile the whole circuit using the OpenRAM compiler. 
-
-  
 
 
