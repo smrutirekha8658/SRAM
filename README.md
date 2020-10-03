@@ -61,8 +61,7 @@ In the above simulation i have done a Write-Read-write operation. Red one is my 
  
   
  # Circuit Daigram of SRAM cell with all Parasitcs**
-  
-  ![sram_parasitcs](https://user-images.githubusercontent.com/71965706/94519493-3715ab80-0248-11eb-9020-a3098cc748f5.png)
+ 
  ![sram_parasitics](https://github.com/sprusty23/SRAM/blob/0ba994ce0b57662f6ac72ef77f38e4181ec6abfb/schematics/parasitics.png)
 
 #Precharge Circuit
@@ -79,7 +78,7 @@ Sense Amplifier generally used to detect the node voltage stored in the memory. 
   **Circuit Diagram**
    
    
-![Sense](https://user-images.githubusercontent.com/71965706/94522258-ff5d3280-024c-11eb-9a69-a9c65f69bedb.png)
+![Sense]( https://github.com/sprusty23/SRAM/blob/0ba994ce0b57662f6ac72ef77f38e4181ec6abfb/schematics/sense_amp.png 
   
 ### Write Driver
 - The write drivers send the input data signals onto the bit-lines for a write operation. The write
