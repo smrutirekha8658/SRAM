@@ -25,7 +25,7 @@ This project is focused on  6T SRAM memory design.
 
     
  ## Block Diagram
-![block dia](https://user-images.githubusercontent.com/71965706/94511998-881da380-0238-11eb-91c3-ffe9e7b702da.png)
+![block dia](https://github.com/sprusty23/SRAM/blob/master/schematics/SRAM.png)
 
 
 ## Bit-cell array(6T cell)
@@ -33,7 +33,7 @@ This project is focused on  6T SRAM memory design.
 
 ### 6T-SRAM Memory cell
   **Circuit Diagram**
-![SRAM_6t](https://user-images.githubusercontent.com/71965706/94513996-b6ea4880-023d-11eb-81be-3733cea20c55.png)
+![SRAM_6t](https://github.com/sprusty23/SRAM/blob/master/schematics/6t.png)
 
 - In this project I have designed and characterised the Bit-cell array of SRAM-6T cell using NGSpice tool with 0.5um SCMOS technology from MOSIS.
   
@@ -43,19 +43,22 @@ This project is focused on  6T SRAM memory design.
   
   ![Dc sim](https://user-images.githubusercontent.com/71965706/94514148-1cd6d000-023e-11eb-8fc0-00866ce9f399.png)
 
+ ![DC sim](https://github.com/sprusty23/SRAM/blob/master/schematics/dc_table.png )
+
  - From the Dc Analysis we get the operating point of the CMOS Inverters at the intersection of input and output voltage.
  - we also get the Design Margin for the pull-up and pull-down device by performing write operatrion.
+![DC analysis](https://github.com/sprusty23/SRAM/blob/master/schematics/dc_plot.png)
 
   **Transient Analysis**
   
   ![SRAM_sim](https://user-images.githubusercontent.com/71965706/94520666-472e8a80-024a-11eb-9492-f35dc69cfd40.png)
   
 In the above simulation i have done a Write-Read-write operation. Red one is my input signal to Pre-charge circuit. Blue colur represents the word line signal , next 2 signals represents the bit and complemet bit signal and last two signals represents the internal node volatages which stored in the cell.
-    I have calculated the maximum volatages variation at internal node for the [PVT](https://in.search.yahoo.com/search?fr=mcafee&type=D210IN662G0&p=pvt+corner+in+vlsi) corners and for the temperature -40C,25C and 105C.
+    I have calculated the maximum volatages variation at internal node for the [PVT](https://github.com/sprusty23/SRAM/blob/master/schematics/transi_table.png) corners and for the temperature -40C,25C and 105C.
     
   **Simulation Result**
   
-  ![SRAM](https://user-images.githubusercontent.com/71965706/94521572-e99b3d80-024b-11eb-967b-eef5a0cfa152.png)
+  ![SRAM](https://github.com/sprusty23/SRAM/blob/master/schematics/transient.png)
 
 
  
@@ -78,9 +81,9 @@ Sense Amplifier generally used to detect the node voltage stored in the memory. 
   **Circuit Diagram**
    
    
-![Sense]( https://github.com/sprusty23/SRAM/blob/0ba994ce0b57662f6ac72ef77f38e4181ec6abfb/schematics/sense_amp.png 
+![Sense](https://github.com/sprusty23/SRAM/blob/master/schematics/sense_amp.png) 
   
-### Write Driver
+### Write Driver 
 - The write drivers send the input data signals onto the bit-lines for a write operation. The write
 drivers are tri-stated so that they can be placed between the column multiplexer/memory array and the sense amplifiers.
 - There is one write driver for each input data bit.
@@ -93,7 +96,7 @@ drivers are tri-stated so that they can be placed between the column multiplexer
 
 ## Simulation of 6T-SRAM cell with write driver and sense amplifier
 
-![clk sync](https://user-images.githubusercontent.com/71965706/94522882-fae54980-024d-11eb-91bf-f5a0534491ce.png)
+![clksync](https://github.com/sprusty23/SRAM/blob/master/schematics/Write_pulse.png)
 
 ### Installing and Simulating on NGSpice
 To Download NGSpice on your System
