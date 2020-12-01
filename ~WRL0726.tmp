@@ -5,14 +5,6 @@
 We can design SRAM in many ways based on number of transistor used in its core cell. For example : 6T SRAM, 8T SRAM, 9T SRAM etc..
 This project is focused on  6T SRAM memory design.
 
-## CONTENTS
-- SRAM Design
-- Block Diagram
-- Custom cells
-- Pre-Layout Simulation
-- Post-Layout Simulation
-- Future Work
-
 ##SRAM specification   
 - Memory Size -  1k * 32-bit. 
 - Operating voltage - 5V
@@ -20,7 +12,7 @@ This project is focused on  6T SRAM memory design.
 - Tool Used – Sue2, NGspice,  Magic
 - Compiler – Open source memory compiler OpenRAM. (https://github.com/mguthaus/OpenRAM/blob/master/OpenRAM_ICCAD_2016_paper.pdf "OpenRAM")
  
-## SRAM Design Blocks 
+## SRAM Design 
  The SRAM block consists of 8 major blocks:
 	-  Bit-cell array
 	-  Precharge Circuit
@@ -32,7 +24,7 @@ This project is focused on  6T SRAM memory design.
    	-  Address Decoder
 
     
-## Block Diagram of  6T  SRAM 
+## Block Diagram
 ![block dia](https://github.com/sprusty23/SRAM/blob/master/schematics/SRAM.png)
 
 
@@ -44,8 +36,11 @@ This project is focused on  6T SRAM memory design.
 ![SRAM_6t](https://github.com/sprusty23/SRAM/blob/master/schematics/6t.png)
 
 ### 6T-SRAM Memory cell Layout
-![6t_layout](https://github.com/sprusty23/SRAM/blob/master/schematics/6t_layout.png)
-
+![6t_layout]
+(https://github.com/sprusty23/SRAM/blob/master/schematics/6t_layout.png)
+- In this project I have designed and characterised the Bit-cell array of SRAM-6T cell using NGSpice tool with 0.5um SCMOS technology from MOSIS.
+  
+- In this section I have represented the DC analysis and Transient Analysis of the 6T-SRAM cell which I have simulated using NGSpice
 ##DC Analysis
   
   ![Dc sim](https://user-images.githubusercontent.com/71965706/94514148-1cd6d000-023e-11eb-8fc0-00866ce9f399.png)
@@ -58,11 +53,8 @@ This project is focused on  6T SRAM memory design.
 - I have simulate the circuit at different corner (Slow slow, fast fast, Nominal) at 3 different temperature.
 - found that slow slow 105°C temperature is the worst case scenario.As at this case the Vq value is minimum and Vqbar value is maximum. 
 
-## 6T cell Stability
-
-### RNM (Read Noise Margin)
-![RNM](https://github.com/sprusty23/SRAM/blob/master/schematics/6t_rnm.png)
-###WNM(Write Noise Margin)
+![DC analysis](https://github.com/sprusty23/SRAM/blob/master/schematics/dc_plot.png)
+- This is the plot of word line, the stored data Q and Qbar. 
 
 ## Transient Analysis
   ![SRAM_sim](https://github.com/sprusty23/SRAM/blob/master/schematics/transi_table.png)
