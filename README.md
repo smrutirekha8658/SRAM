@@ -38,7 +38,6 @@ This project is focused on  6T SRAM memory design.
 ### 6T-SRAM Memory cell Layout
 ![6t_layout]
 (https://github.com/sprusty23/SRAM/blob/master/schematics/6t_layout.png)
-
 - In this project I have designed and characterised the Bit-cell array of SRAM-6T cell using NGSpice tool with 0.5um SCMOS technology from MOSIS.
   
 - In this section I have represented the DC analysis and Transient Analysis of the 6T-SRAM cell which I have simulated using NGSpice
@@ -48,7 +47,7 @@ This project is focused on  6T SRAM memory design.
 - From the Dc Analysis we get the operating point of the CMOS Inverters at the intersection of input and output voltage.
  - we also get the Design Margin for the pull-up and pull-down device by performing write operatrion.
 
-#DC corner simulation data:
+# DC corner simulation data:
  ![DC sim](https://github.com/sprusty23/SRAM/blob/master/schematics/dc_table.png )
 
 - I have simulate the circuit at different corner (Slow slow, fast fast, Nominal) at 3 different temperature.
@@ -57,7 +56,7 @@ This project is focused on  6T SRAM memory design.
 ![DC analysis](https://github.com/sprusty23/SRAM/blob/master/schematics/dc_plot.png)
 - This is the plot of word line, the stored data Q and Qbar. 
 
-##Transient Analysis
+## Transient Analysis
   ![SRAM_sim](https://github.com/sprusty23/SRAM/blob/master/schematics/transi_table.png)
   
 In the above simulation i have done a Write-Read-write operation. I have calculated the maximum volatages variation at internal node for the
