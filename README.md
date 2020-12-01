@@ -62,9 +62,9 @@ This project is focused on  6T SRAM memory design.
 
 ### RNM (Read Noise Margin)
 ![RNM](https://github.com/sprusty23/SRAM/blob/master/schematics/RNM_6T.png)
-###WNM(Write Noise Margin)
-![WNM](https://github.com/sprusty23/SRAM/blob/master/schematics/WNM_6T.png)
 
+### WNM(Write Noise Margin)
+![WNM](https://github.com/sprusty23/SRAM/blob/master/schematics/WNM_6T.png)
 
 
 
@@ -113,10 +113,35 @@ drivers are tri-stated so that they can be placed between the column multiplexer
 ## Simulation of 6T-SRAM cell with write driver and sense amplifie
 ![clksync](https://github.com/sprusty23/SRAM/blob/master/schematics/Write_pulse.png)
 
-### 8T SRAM Cell
+## 8T SRAM Memory Cell
 Basic Structure: Each bit in a 8T SRAM requires 8transistors. Two NMOS pass transistors for Read and Write
-operations which are also known as access transistors. Four transistors for the two-inverter latch and two transistors for an inverter for read operation. From Fig.3 M5 and M6 are the access transistors, M1, M2, M3 and M4 are the transistors for two inverter latch and M7 and M8 are the transistors for the read operation. The Bit line as well as the Read word line and Write word line are connected to the access transistors
+operations which are also known as access transistors. Four transistors for the two-inverter latch and two transistors for an inverter for read operation. From below fig M5 and M6 are the access transistors, M1, M2, M3 and M4 are the transistors for two inverter latch and M7 and M8 are the transistors for the read operation. The Bit line as well as the Read word line and Write word line are connected to the access transistors
 for Read and Write on the latch.
+
+### Circuit Diagram
+![8tcell]( https://github.com/sprusty23/SRAM/blob/master/schematics/8t.png)
+
+
+### RNM (Read Noise Margin)
+![RNM](https://github.com/sprusty23/SRAM/blob/master/schematics/RNM_8T.png)
+
+### WNM(Write Noise Margin)
+![WNM](https://github.com/sprusty23/SRAM/blob/master/schematics/WNM_8T.png)
+
+## 8T SRAM Memory Cell
+Basic Structure: Each bit in a 9T SRAM requires 9transistors. Two NMOS pass transistors for Write operation which are also known as access transistors. Four transistors for the two-inverter latch, three transistors for read operation. From below Fig M5 and M6 are the access transistors, M1, M2,
+M3 and M4 are the transistors for two inverter latch and M7, M8 and M9 are the transistors for the read operation. The Bit line as well as the Read word line and Write word line are
+connected to M9 and the access transistors for Read and Write on the latch respectively.
+### Circuit Diagram
+![9tcell]( https://github.com/sprusty23/SRAM/blob/master/schematics/9t.png)
+
+
+### RNM (Read Noise Margin)
+![RNM](https://github.com/sprusty23/SRAM/blob/master/schematics/RNM_8T.png)
+
+### WNM(Write Noise Margin)
+![WNM](https://github.com/sprusty23/SRAM/blob/master/schematics/WNM_6T.png)
+
 
 
 ### Installing and Simulating on NGSpice
