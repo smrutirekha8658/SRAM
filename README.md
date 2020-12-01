@@ -61,8 +61,12 @@ This project is focused on  6T SRAM memory design.
 ## 6T cell Stability
 
 ### RNM (Read Noise Margin)
-![RNM](https://github.com/sprusty23/SRAM/blob/master/schematics/6t_rnm.png)
+![RNM](https://github.com/sprusty23/SRAM/blob/master/schematics/RNM_6T.png)
 ###WNM(Write Noise Margin)
+![WNM](https://github.com/sprusty23/SRAM/blob/master/schematics/WNM_6T.png)
+
+
+
 
 ## Transient Analysis
   ![SRAM_sim](https://github.com/sprusty23/SRAM/blob/master/schematics/transi_table.png)
