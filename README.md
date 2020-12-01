@@ -14,14 +14,14 @@ This project is focused on  6T SRAM memory design.
  
 ## SRAM Design 
  The SRAM block consists of 8 major blocks:
-- Bit-cell array
-- Precharge Circuit
-   -  Sense Amplifier
-   -  Write Driver
-   -  Word-line driver 
-   -  Control logic 
-   -  Column Multiplexer
-   -  Address Decoder
+	-  Bit-cell array
+	-  Precharge Circuit
+   	-  Sense Amplifier
+   	-  Write Driver
+   	-  Word-line driver 
+   	-  Control logic 
+   	-  Column Multiplexer
+   	-  Address Decoder
 
     
 ## Block Diagram
@@ -34,6 +34,10 @@ This project is focused on  6T SRAM memory design.
 ### 6T-SRAM Memory cell
  
 ![SRAM_6t](https://github.com/sprusty23/SRAM/blob/master/schematics/6t.png)
+
+### 6T-SRAM Memory cell Layout
+![6t_layout]
+(https://github.com/sprusty23/SRAM/blob/master/schematics/6t_layout.png)
 
 - In this project I have designed and characterised the Bit-cell array of SRAM-6T cell using NGSpice tool with 0.5um SCMOS technology from MOSIS.
   
@@ -74,31 +78,35 @@ In the above simulation i have done a Write-Read-write operation. I have calcula
 The precharge circuit is placed on top of every column in the memory array and equalizes the bit-line voltages so that the sense amplifier can sense the voltage difference between the two bit-lines.
 
 - In the above circuit diagram the M5, M6, M7 mosfets are used for pre-charging the Bit and Bit bar line. M8 and M9 mosfets are used at the time of write operation. As 1k 32-bit SRAM consists of 32k of bit cells, so it can taken as 128*256(i.e. 128 number of rows and 256 number of columns). For Simulation we are taking one 6T SRAM cell with the parasitic capacitor of all the cells. cw1 ,cw2 ,cw3 are the wire load capacitors(10fF/cell) which are connected to bit, complementary bit and word line. Simillarly M1, M2, M3, M4 are the parasitic mosfets whose total capacitance is equal to the 1k 32-bit cell array.
+
 ### Sense Amlifier
-- A differential sense amplifier is used to sense the voltage difference between the bit-lines of a memory cell while a read operation is performed. The sense amplifier uses a bit-line isolation technique to increase per-
-              formance. 
+- A differential sense amplifier is used to sense the voltage difference between the bit-lines of a memory cell while a read operation is performed. The sense amplifier uses a bit-line isolation technique to increase performance
+
 - The sense amplifier circuitry is placed below thecolumn multiplexer or the memory array if no      column mul- tiplexer is used. There is one sense amplifier for each output bit.
 
-- 
-Sense Amplifier generally used to detect the node voltage stored in the memory. It will be on at the time of Read operation. I have used a latch based Sense amplifier in my design.
+- Sense Amplifier generally used to detect the node voltage stored in the memory. It will be on at the time of Read operation. I have used a latch based Sense amplifier in my design.
 
 
   ![Sense_amp](https://github.com/sprusty23/SRAM/blob/master/schematics/sense_amp.png) 
   
 ### Write Driver 
 - The write drivers send the input data signals onto the bit-lines for a write operation. The write
-              drivers are tri-stated so that they can be placed between the column multiplexer/memory array and the     sense amplifiers.
+drivers are tri-stated so that they can be placed between the column multiplexer/memory array and the sense amplifiers.
 - There is one write driver for each input data bit.
-
 - The write drivers send the input data signals onto the bit-lines for a write operation. The write drivers are tri-stated so that they can be placed between the column multiplexer/memory array and the sense amplifiers. There is one write driver for each input data bit.
 
 **Circuit Diagram**
 
 ![write_driver](https://user-images.githubusercontent.com/71965706/94522716-b48fea80-024d-11eb-8e7a-538e793c3781.png)
 
-## Simulation of 6T-SRAM cell with write driver and sense amplifier
-
+## Simulation of 6T-SRAM cell with write driver and sense amplifie
 ![clksync](https://github.com/sprusty23/SRAM/blob/master/schematics/Write_pulse.png)
+
+### 8T SRAM Cell
+Basic Structure: Each bit in a 8T SRAM requires 8transistors. Two NMOS pass transistors for Read and Write
+operations which are also known as access transistors. Four transistors for the two-inverter latch and two transistors for an inverter for read operation. From Fig.3 M5 and M6 are the access transistors, M1, M2, M3 and M4 are the transistors for two inverter latch and M7 and M8 are the transistors for the read operation. The Bit line as well as the Read word line and Write word line are connected to the access transistors
+for Read and Write on the latch.
+
 
 ### Installing and Simulating on NGSpice
 To Download NGSpice on your System
