@@ -136,7 +136,7 @@ for Read and Write on the latch.
 ![WNM](https://github.com/sprusty23/SRAM/blob/master/schematics/WNM_8T.png)
 
 ## Layout
-![layout](https://github.com/sprusty23/SRAM/blob/master/schematics/8t_layout.png)
+![layout](https://github.com/sprusty23/SRAM/blob/master/schematics/8t_layput.png)
 
 ### 9T SRAM Memory Cell
 Basic Structure: Each bit in a 9T SRAM requires 9transistors. Two NMOS pass transistors for Write operation which are also known as access transistors. Four transistors for the two-inverter latch, three transistors for read operation. From below Fig M5 and M6 are the access transistors, M1, M2,
