@@ -15,7 +15,7 @@ We can design SRAM in many ways based on number of transistor used in its core c
 		- RNM (Read Noise Margin)
 		- WNM (Write Noise Margin)
 	- Prelayout Simulation
-	-Layout
+	- Layout
  - Comparitive Study of  6T , 8T, 9T SRAM cells 
 	- 8transistor SRAM cell
 		- Block Diagram
