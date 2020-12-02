@@ -19,22 +19,22 @@ We can design SRAM in many ways based on number of transistor used in its core c
  - Comparitive Study of  6T , 8T, 9T SRAM cells 
 	- 8transistor SRAM cell
 		- Block Diagram
-		-Static Noise Margin
+		- Static Noise Margin
 			- RNM (Read Noise Margin)
 			- WNM(Write Noise Margin)
 		- Prelayout Simulation
 		- Layout
 	- 9transistor SRAM cell
 		- Block Diagram
-		-Static Noise Margin
+		- Static Noise Margin
 			- RNM (Read Noise Margin)
 			- WNM(Write Noise Margin)
 		- Prelayout Simulation
 		- Layout
-	- Comparison based 
+	- Comparison based  on
        - Noise Margin
        - Area
-       -Parasitic Capacitance
+       - Parasitic Capacitance
 - Future Work
 - Acknowledgement
 
@@ -50,15 +50,15 @@ We can design SRAM in many ways based on number of transistor used in its core c
 ![block dia](https://github.com/sprusty23/SRAM/blob/master/schematics/SRAM.png)
  
 ## Standard 6T SRAM design Blocks 
- The SRAM block consists of 8 major blocks:
-	-  Bit-cell array
-	-  Precharge Circuit
-   	-  Sense Amplifier
-   	-  Write Driver
-   	-  Word-line driver 
-   	-  Control logic 
-   	-  Column Multiplexer
-   	-  Address Decoder
+ The SRAM block consists of 8 major blocks :
+- Bit-cell array
+- Precharge Circuit
+- Sense Amplifier
+- Write Driver
+- Word-line driver 
+-  Control logic 
+-  Column Multiplexer
+-  Address Decoder
 
 ## Bit-cell array(6T cell)
 - The 6T cell is the default memory cell because it is the most commonly used cell in SRAM devices. 6T cells are tiled together with abutting word- and bit-lines to make up the memory array. The bit-cell array’s aspect ratio is made as square as possible using multiple columns of data words. The memory cell is a custom designed library cell for each technology. Other types of memory cells, such as 7T, 8T, and 10T cells, can be used as alternatives to the 6T cell.   
@@ -97,9 +97,6 @@ drivers are tri-stated so that they can be placed between the column multiplexer
 
 ![write_driver](https://user-images.githubusercontent.com/71965706/94522716-b48fea80-024d-11eb-8e7a-538e793c3781.png)
 
-## MSimulation of 6T-SRAM cell with write driver and sense amplifie
-![clksync](https://github.com/sprusty23/SRAM/blob/master/schematics/Write_pulse.png)
-
 
 ## 6T cell Stability
 
@@ -109,20 +106,19 @@ drivers are tri-stated so that they can be placed between the column multiplexer
 ### WNM (Write Noise Margin)
 ![WNM](https://github.com/sprusty23/SRAM/blob/master/schematics/wnm_6tt.png)
 
-
-
-## Prelayout Simulation
-  ![SRAM_sim](https://github.com/sprusty23/SRAM/blob/master/schematics/transi_table.png)
+## Prelayout  Simulation
+![clksync](https://github.com/sprusty23/SRAM/blob/master/schematics/Write_pulse.png)
   
-  **Simulation Result**
-  
-  ![SRAM](https://github.com/sprusty23/SRAM/blob/master/schematics/transient.png)
+
+ ## Corner Simulation
+  ![SRAM](https://github.com/sprusty23/SRAM/blob/master/schematics/transi_table.png)
 
 ## 6T-SRAM Memory cell Layout
 ![6t_layout](https://github.com/sprusty23/SRAM/blob/master/schematics/6t_layout.png)
 
 
-### A Comparative Study of 6Transistor ,  8Transistor and 9Transistor SRAM Cell
+# A Comparative Study of 6Transistor ,  8Transistor and 9Transistor SRAM Cell
+
 ### 8T SRAM Memory Cell
 Basic Structure:
  Each bit in a 8T SRAM requires 8transistors. Two NMOS pass transistors for Read and Write
@@ -140,7 +136,7 @@ for Read and Write on the latch.
 ![WNM](https://github.com/sprusty23/SRAM/blob/master/schematics/WNM_8T.png)
 
 ## Layout
-![layout](https://github.com/sprusty23/SRAM/blob/master/schematics/8t_layout.png
+![layout](https://github.com/sprusty23/SRAM/blob/master/schematics/8t_layout.png)
 
 ### 9T SRAM Memory Cell
 Basic Structure: Each bit in a 9T SRAM requires 9transistors. Two NMOS pass transistors for Write operation which are also known as access transistors. Four transistors for the two-inverter latch, three transistors for read operation. From below Fig M5 and M6 are the access transistors, M1, M2,
@@ -160,13 +156,14 @@ connected to M9 and the access transistors for Read and Write on the latch respe
 ## Layout
 ![layout](https://github.com/sprusty23/SRAM/blob/master/schematics/9t_layout.png)
 
-### Comparison Based On Read Noise Margin
+## Comparison Based On
+### Read Noise Margin
 ![rnm](https://github.com/sprusty23/SRAM/blob/master/schematics/RNM_Table.png)
 
-### Comparison Based On write Noise Margin
+###  Write Noise Margin
 ![rnm](https://github.com/sprusty23/SRAM/blob/master/schematics/WNM_table.png)
 
-### Comparison Based On Area and Parasitics
+### Area and Parasitics
 ![rnm](https://github.com/sprusty23/SRAM/blob/master/schematics/area_table.png)
 
 
